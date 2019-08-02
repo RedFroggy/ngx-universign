@@ -8,13 +8,13 @@ The component loads an universign javascript file that creates an iframe in whic
 
 ## Installation
 
-`npm install ngx-universign-iframe`
+`npm install ngx-universign`
 
 ## Getting started
 
  - Import  `UniversignModule` to your Angular application
- - Add `<universign-iframe>` in your template
- - The UniversignIframeComponent requires a signerId identifier that can be retrieved once the document to sign is uploaded to universign.
+ - Add `<ngx-universign-iframe>` in your template
+ - The UniversignComponent requires a signerId identifier that can be retrieved once the document to sign is uploaded to universign.
  
 ## Environments:
 There is two universign environments (sign.test.universign.eu and app.universign.com) and a different javascript file for each one:
