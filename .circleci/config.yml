@@ -1,0 +1,18 @@
+version: 2 # use CircleCI 2.0
+jobs:
+  build:
+
+    working_directory: ~/ngx-universign
+
+    docker:
+      - image: circleci/node:12-browsers
+
+    steps:
+
+      - checkout
+
+      - run: npm install
+      - run: npm run lint
+      - run: npm run test
+      - run: npm run build
+      - run: npm run codecov
