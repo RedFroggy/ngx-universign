@@ -20,7 +20,7 @@ import { UniversignBuilder } from './model/universign.builder';
   template: '<div id="{{config.id}}" class="iframe-container"></div>',
   styleUrls: ['universign.component.scss']
 })
-export class UniversignComponent implements OnInit, AfterViewInit, OnDestroy, OnChanges {
+export class UniversignComponent implements OnInit, OnDestroy, OnChanges {
   @Input() config: UniversignConfig ; // component configuration
   @Input() signerId: string; // Signer identifier (mandatory)
 
@@ -52,13 +52,6 @@ export class UniversignComponent implements OnInit, AfterViewInit, OnDestroy, On
 
   ngOnChanges(changes: SimpleChanges) {
     if (changes.signerId.currentValue !== changes.signerId.previousValue) {
-      this.universign.setSignerId(this.signerId);
-      this.universign.start();
-    }
-  }
-
-  ngAfterViewInit() {
-    if (this.signerId) {
       this.universign.setSignerId(this.signerId);
       this.universign.start();
     }
