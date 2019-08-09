@@ -11,14 +11,14 @@ describe('Universign builder unit tests', () => {
   const changeEvent: EventEmitter<UniversignEvent> = new EventEmitter();
 
   it('should create a universign instance', () => {
-    builder = UniversignBuilder.getInstance()
-      .setEl('el')
-      .setRedirectionMode(RedirectionMode.IN)
+    builder = Universign.builder()
+      .withEl('el')
+      .withRedirectionMode(RedirectionMode.IN)
       .onEnd(endEvent)
       .onStart(startEvent)
       .onChange(changeEvent)
-      .setScriptUrl(UNIVERSIGN_TEST_SCRIPT_URL)
-      .setSignerId('1');
+      .withScriptUrl(UNIVERSIGN_TEST_SCRIPT_URL)
+      .withSignerId('1');
 
     expect(builder).toBeDefined();
 

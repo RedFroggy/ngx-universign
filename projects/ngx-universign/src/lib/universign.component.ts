@@ -38,11 +38,11 @@ export class UniversignComponent implements OnInit, OnDestroy, OnChanges {
   ngOnInit() {
 
     // Build the universign object via its builder
-    this.universign = UniversignBuilder.getInstance()
-      .setEl(this.config.id)
-      .setRedirectionMode(this.config.redirectionMode)
-      .setScriptUrl(this.universignConfig.prodMode ? UNIVERSIGN_PROD_SCRIPT_URL : UNIVERSIGN_TEST_SCRIPT_URL)
-      .setSignerId(this.signerId)
+    this.universign = Universign.builder()
+      .withEl(this.config.id)
+      .withRedirectionMode(this.config.redirectionMode)
+      .withScriptUrl(this.universignConfig.prodMode ? UNIVERSIGN_PROD_SCRIPT_URL : UNIVERSIGN_TEST_SCRIPT_URL)
+      .withSignerId(this.signerId)
       // Bound universign events to outputs
       .onEnd(this.end)
       .onStart(this.begin)
@@ -52,7 +52,7 @@ export class UniversignComponent implements OnInit, OnDestroy, OnChanges {
 
   ngOnChanges(changes: SimpleChanges) {
     if (changes.signerId.currentValue !== changes.signerId.previousValue) {
-      this.universign.setSignerId(this.signerId);
+      this.universign.updateSignerId(this.signerId);
       this.universign.start();
     }
   }

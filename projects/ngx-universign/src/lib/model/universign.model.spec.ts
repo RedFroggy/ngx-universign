@@ -19,11 +19,11 @@ describe('Universign model unit tests', () => {
 
   beforeEach(() => {
 
-    builder = UniversignBuilder.getInstance()
-      .setEl('el')
-      .setRedirectionMode(RedirectionMode.IN)
-      .setScriptUrl(UNIVERSIGN_TEST_SCRIPT_URL)
-      .setSignerId('1');
+    builder = Universign.builder()
+      .withEl('el')
+      .withRedirectionMode(RedirectionMode.IN)
+      .withScriptUrl(UNIVERSIGN_TEST_SCRIPT_URL)
+      .withSignerId('1');
 
     universign = new Universign(builder) as any;
 

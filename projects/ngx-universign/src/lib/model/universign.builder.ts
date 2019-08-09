@@ -16,10 +16,6 @@ export class UniversignBuilder {
   private $onStart: EventEmitter<UniversignEvent>;
   private $onChange: EventEmitter<UniversignEvent>;
 
-  static getInstance(): UniversignBuilder {
-    return new UniversignBuilder();
-  }
-
   get el(): string {
     return this.$el;
   }
@@ -48,22 +44,22 @@ export class UniversignBuilder {
     return this.$onChange;
   }
 
-  setEl(el: string) {
+  withEl(el: string) {
     this.$el = el || UNIVERSIGN_DEFAULT_IFRAME_ID;
     return this;
   }
 
-  setRedirectionMode(mode: RedirectionMode) {
+  withRedirectionMode(mode: RedirectionMode) {
     this.$redirectionMode = mode || RedirectionMode.IN;
     return this;
   }
 
-  setSignerId(signerId: string) {
+  withSignerId(signerId: string) {
     this.$signerId = signerId;
     return this;
   }
 
-  setScriptUrl(scriptUrl: string) {
+  withScriptUrl(scriptUrl: string) {
     this.$scriptUrl = scriptUrl;
     return this;
   }

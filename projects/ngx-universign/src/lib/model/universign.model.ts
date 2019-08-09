@@ -37,6 +37,10 @@ export class Universign {
     this.listener = this.universignListener.bind(this);
   }
 
+  static builder(): UniversignBuilder {
+    return new UniversignBuilder();
+  }
+
   /**
    * Starts the signature process
    */
@@ -64,7 +68,7 @@ export class Universign {
     this.removeListener();
   }
 
-  setSignerId(signerId: string) {
+  updateSignerId(signerId: string) {
     this.signerId = signerId;
   }
 
