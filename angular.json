@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "angular-universign": {
+    "ngx-universign": {
       "root": "projects/ngx-universign",
       "sourceRoot": "projects/ngx-universign/src",
       "projectType": "library",
