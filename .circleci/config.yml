@@ -1,18 +1,32 @@
 version: 2 # use CircleCI 2.0
 jobs:
   build:
-
     working_directory: ~/ngx-universign
-
     docker:
       - image: circleci/node:12-browsers
-
     steps:
-
       - checkout
-
       - run: npm ci
       - run: npm run lint
       - run: npm run test
       - run: npm run build
       - run: npm run codecov
+  release:
+    working_directory: ~/ngx-universign
+    docker:
+      - image: circleci/node:12-browsers
+    steps:
+      - checkout
+      - run: npm run semantic-release
+
+workflows:
+  version: 2
+  build-test-release:
+    jobs:
+      - build
+      - release:
+          requires:
+            - build
+          filters:
+            branches:
+              only: master
