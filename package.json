@@ -1,7 +1,7 @@
 {
   "name": "ngx-universign",
   "description": "Angular universign library",
-  "version": "0.0.0",
+  "version": "0.0.0-development",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
@@ -10,9 +10,8 @@
     "lint": "ng lint",
     "e2e": "ng e2e",
     "codecov": "codecov",
-    "semantic-release": "semantic-release pre && npm publish && semantic-release post"
+    "semantic-release": "semantic-release"
   },
-  "private": true,
   "dependencies": {
     "@angular/animations": "~8.1.1",
     "@angular/common": "~8.1.1",
@@ -34,6 +33,7 @@
     "@commitlint/cli": "8.1.0",
     "@commitlint/config-conventional": "8.1.0",
     "@netbasal/spectator": "~3.9.4",
+    "@semantic-release/changelog": "^3.0.4",
     "@types/jasmine": "~3.3.8",
     "@types/jasminewd2": "~2.0.3",
     "@types/node": "~8.9.4",
@@ -50,11 +50,26 @@
     "ng-mocks": "~8.0.0",
     "ng-packagr": "^4.2.0",
     "protractor": "~5.4.0",
-    "semantic-release": "~8.2.3",
+    "semantic-release": "^15.13.21",
     "ts-node": "~7.0.0",
     "tsickle": ">=0.34.0",
     "tslib": "^1.9.0",
     "tslint": "~5.15.0",
     "typescript": "~3.4.3"
+  },
+  "author": "Michael Desigaud",
+  "bugs": {
+    "url": "https://github.com/RedFroggy/ngx-universign/issues"
+  },
+  "keywords": [
+    "angular",
+    "universign",
+    "signature",
+    "red froggy"
+  ],
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/RedFroggy/ngx-universign.git"
   }
 }
