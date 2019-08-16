@@ -17,6 +17,7 @@ jobs:
       - image: circleci/node:12-browsers
     steps:
       - checkout
+      - run: npm ci
       - run: npm run semantic-release
 
 workflows:
