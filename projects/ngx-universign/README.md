@@ -1,23 +1,23 @@
-# RdfUniversign
+# ngx-universign
 
 This library was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.2.0.
 
 ## Code scaffolding
 
-Run `ng generate component component-name --project rdf-universign` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module --project rdf-universign`.
-> Note: Don't forget to add `--project rdf-universign` or else it will be added to the default project in your `angular.json` file. 
+Run `ng generate component component-name --project ngx-universign` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module --project ngx-universign`.
+> Note: Don't forget to add `--project ngx-universign` or else it will be added to the default project in your `angular.json` file. 
 
 ## Build
 
-Run `ng build rdf-universign` to build the project. The build artifacts will be stored in the `dist/` directory.
+Run `ng build ngx-universign` to build the project. The build artifacts will be stored in the `dist/` directory.
 
 ## Publishing
 
-After building your library with `ng build rdf-universign`, go to the dist folder `cd dist/rdf-universign` and run `npm publish`.
+After building your library with `ng build ngx-universign`, go to the dist folder `cd dist/ngx-universign` and run `npm publish`.
 
 ## Running unit tests
 
-Run `ng test rdf-universign` to execute the unit tests via [Karma](https://karma-runner.github.io).
+Run `ng test ngx-universign` to execute the unit tests via [Karma](https://karma-runner.github.io).
 
 ## Further help
 
