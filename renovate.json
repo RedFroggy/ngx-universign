@@ -1,0 +1,14 @@
+{
+  "extends": ["config:base", ":semanticCommitTypeAll(chore)"],
+  "packageRules": [
+    {
+      "packagePatterns": ["^@angular", "^typescript"],
+      "enabled": false
+    }
+  ],
+  "automerge": true,
+  "automergeType": "branch",
+  "major": {
+    "automerge": false
+  }
+}
