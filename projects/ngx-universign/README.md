@@ -1,24 +1,24 @@
 # ngx-universign
 
-This library was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.2.0.
+[Universign](https://www.universign.com/fr/) iframe integration for Angular. Gives you the possibility to sign documents in the browser.
 
-## Code scaffolding
+The universign iframe integration relies on [this documention](https://help.universign.com/hc/fr/articles/360000059698-Int%C3%A9grer-La-page-de-signature-universign-en-mode-Iframe).
 
-Run `ng generate component component-name --project ngx-universign` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module --project ngx-universign`.
-> Note: Don't forget to add `--project ngx-universign` or else it will be added to the default project in your `angular.json` file. 
+The component loads an universign javascript file that creates an iframe in which a user can sign documents.
 
-## Build
+## Installation
 
-Run `ng build ngx-universign` to build the project. The build artifacts will be stored in the `dist/` directory.
+`npm install ngx-universign`
 
-## Publishing
+## Getting started
 
-After building your library with `ng build ngx-universign`, go to the dist folder `cd dist/ngx-universign` and run `npm publish`.
-
-## Running unit tests
-
-Run `ng test ngx-universign` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+ - Import  `UniversignModule` to your Angular application
+ - Add `<ngx-universign-iframe>` in your template
+ - The UniversignComponent requires a signerId identifier that can be retrieved once the document to sign is uploaded to universign.
+ 
+## Environments:
+There is two universign environments (sign.test.universign.eu and app.universign.com) and a different javascript file for each one:
+- https://sign.test.universign.eu/sig/embed.js (loaded by default)
+- https://app.universign.com/sig/embed.js (production)
+- To use the production mode, you can do: `UniversignModule.forRoot({prodMode: true})`
+   

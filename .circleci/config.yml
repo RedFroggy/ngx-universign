@@ -20,29 +20,14 @@ jobs:
           key: *cache_key
           paths:
             - node_modules
-
-  lint:
-    <<: *job_defaults
-    steps:
-      - checkout
-      - restore_cache:
-          key: *cache_key
-      - run: npm run lint
-
-  test:
-    <<: *job_defaults
-    steps:
-      - checkout
-      - restore_cache:
-          key: *cache_key
-      - run: npm run test
-
   build:
     <<: *job_defaults
     steps:
       - checkout
       - restore_cache:
           key: *cache_key
+      - run: npm run lint
+      - run: npm run test
       - run: npm run build
       - save_cache:
           key: *dist_key
@@ -64,16 +49,9 @@ workflows:
   build-test-release:
     jobs:
       - install
-      - lint:
-          requires:
-            - install
-      - test:
-          requires:
-            - install
       - build:
           requires:
-            - lint
-            - test
+            - install
       - release:
           requires:
             - build
