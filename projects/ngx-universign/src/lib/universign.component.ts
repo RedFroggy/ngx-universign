@@ -51,7 +51,7 @@ export class UniversignComponent implements OnInit, OnDestroy, OnChanges {
   }
 
   ngOnChanges(changes: SimpleChanges) {
-    if (changes.signerId.currentValue !== changes.signerId.previousValue) {
+    if (changes.signerId.currentValue !== changes.signerId.previousValue && this.universign) {
       this.universign.updateSignerId(this.signerId);
       this.universign.start();
     }
