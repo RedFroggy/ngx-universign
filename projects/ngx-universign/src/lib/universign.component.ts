@@ -48,6 +48,10 @@ export class UniversignComponent implements OnInit, OnDestroy, OnChanges {
       .onStart(this.begin)
       .onChange(this.progress)
       .build();
+
+    if (this.signerId) {
+      this.universign.start();
+    }
   }
 
   ngOnChanges(changes: SimpleChanges) {

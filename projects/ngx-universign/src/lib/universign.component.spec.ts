@@ -64,6 +64,13 @@ describe('RdfUniversignComponent', () => {
         expect(universignEvent).toEqual(changeEvent);
     });
 
+    it('If the signerId is set at startup, the component should load the iframe', () => {
+        host.detectChanges();
+
+        component.signerId = '1';
+        component.ngOnInit();
+    });
+
     it('universign start transaction event should be propagated to the parent component', () => {
         host.detectChanges();
 
