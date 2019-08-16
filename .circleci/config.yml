@@ -1,33 +1,80 @@
 version: 2 # use CircleCI 2.0
+
+job_defaults: &job_defaults
+  docker:
+    - image: circleci/node:12-browsers
+  working_directory: ~/ngx-universign
+
+cache_key: &cache_key ngx-universign-deps-cache-{{ .Branch }}-{{ checksum "package-lock.json" }}
+dist_key: &dist_key ngx-universign-dist-{{ .Revision }}
+
 jobs:
-  build:
-    working_directory: ~/ngx-universign
-    docker:
-      - image: circleci/node:12-browsers
+  install:
+    <<: *job_defaults
     steps:
       - checkout
+      - restore_cache:
+          key: *cache_key
       - run: npm ci
+      - save_cache:
+          key: *cache_key
+          paths:
+            - node_modules
+
+  lint:
+    <<: *job_defaults
+    steps:
+      - checkout
+      - restore_cache:
+          key: *cache_key
       - run: npm run lint
-      - run: npm run test
-      - run: npm run build
-      - run: npm run codecov
-  release:
-    working_directory: ~/ngx-universign
-    docker:
-      - image: circleci/node:12-browsers
+
+  test:
+    <<: *job_defaults
     steps:
       - checkout
-      - run: npm ci
+      - restore_cache:
+          key: *cache_key
+      - run: npm run test
+
+  build:
+    <<: *job_defaults
+    steps:
+      - checkout
+      - restore_cache:
+          key: *cache_key
+      - run: npm run build
+      - save_cache:
+          key: *dist_key
+          paths:
+            - dist
+
+  release:
+    <<: *job_defaults
+    steps:
+      - checkout
+      - restore_cache:
+          key: *cache_key
+      - restore_cache:
+          key: *dist_key
       - run: npm run semantic-release
 
 workflows:
   version: 2
   build-test-release:
     jobs:
-      - build
-      - release:
+      - install
+      - lint:
           requires:
-            - build
+            - install
+      - test:
+          requires:
+            - install
+      - build:
+          requires:
+            - lint
+            - test
+      - release:
           filters:
             branches:
               only: master
