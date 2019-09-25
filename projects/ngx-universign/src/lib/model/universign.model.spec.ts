@@ -2,7 +2,7 @@ import { Universign } from './universign.model';
 import { UniversignBuilder } from './universign.builder';
 import {
   RedirectionMode,
-  UNIVERSIGN_EVENT, UNIVERSIGN_TEST_SCRIPT_URL, UNIVERSIGN_TYPE_BEGIN,
+  UNIVERSIGN_EVENT, UNIVERSIGN_TEST_BASE_URL, UNIVERSIGN_TYPE_BEGIN,
   UNIVERSIGN_TYPE_END,
   UniversignEvent
 } from './universign.typings';
@@ -22,7 +22,7 @@ describe('Universign model unit tests', () => {
     builder = Universign.builder()
       .withEl('el')
       .withRedirectionMode(RedirectionMode.IN)
-      .withScriptUrl(UNIVERSIGN_TEST_SCRIPT_URL)
+      .withScriptUrl(UNIVERSIGN_TEST_BASE_URL)
       .withSignerId('1');
 
     universign = new Universign(builder) as any;
@@ -80,7 +80,7 @@ describe('Universign model unit tests', () => {
       expect(window.addEventListener).toHaveBeenCalledWith(UNIVERSIGN_EVENT, universignCopy.listener, false);
 
       expect(window.universignSigInit).toHaveBeenCalledWith(universignCopy.el,
-        universignCopy.signerId, {redirectionMode: universignCopy.redirectionMode});
+        universignCopy.signerId, {redirectionMode: universignCopy.redirectionMode}, UNIVERSIGN_TEST_BASE_URL);
       done();
     });
 

@@ -1,5 +1,5 @@
 import { UniversignBuilder } from './universign.builder';
-import { RedirectionMode, UNIVERSIGN_TEST_SCRIPT_URL, UniversignEvent } from './universign.typings';
+import { RedirectionMode, UNIVERSIGN_TEST_BASE_URL, UniversignEvent } from './universign.typings';
 import { EventEmitter } from '@angular/core';
 import { Universign } from './universign.model';
 
@@ -17,7 +17,7 @@ describe('Universign builder unit tests', () => {
       .onEnd(endEvent)
       .onStart(startEvent)
       .onChange(changeEvent)
-      .withScriptUrl(UNIVERSIGN_TEST_SCRIPT_URL)
+      .withScriptUrl(UNIVERSIGN_TEST_BASE_URL)
       .withSignerId('1');
 
     expect(builder).toBeDefined();

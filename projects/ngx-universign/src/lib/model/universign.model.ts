@@ -1,6 +1,13 @@
 import * as loadjs_ from 'loadjs';
 import {UniversignBuilder} from './universign.builder';
-import {RedirectionMode, UNIVERSIGN_EVENT, UNIVERSIGN_TYPE_BEGIN, UNIVERSIGN_TYPE_END, UniversignEvent} from './universign.typings';
+import {
+  RedirectionMode,
+  UNIVERSIGN_EVENT,
+  UNIVERSIGN_SCRIPT_PATH,
+  UNIVERSIGN_TYPE_BEGIN,
+  UNIVERSIGN_TYPE_END,
+  UniversignEvent
+} from './universign.typings';
 import {EventEmitter} from '@angular/core';
 
 const loadjs = loadjs_;
@@ -54,7 +61,7 @@ export class Universign {
         window.addEventListener(UNIVERSIGN_EVENT, this.listener, false);
 
         // Initialize the universign iframe with the signer identifier
-        window.universignSigInit(this.el, this.signerId, {redirectionMode: this.redirectionMode});
+        window.universignSigInit(this.el, this.signerId, {redirectionMode: this.redirectionMode}, this.scriptUrl);
       });
   }
 
@@ -106,6 +113,6 @@ export class Universign {
      * using the loadjs library
      */
   private loadScript(): Promise<string> {
-    return loadjs([this.scriptUrl], {returnPromise: true});
+    return loadjs([this.scriptUrl + UNIVERSIGN_SCRIPT_PATH], {returnPromise: true});
   }
 }
