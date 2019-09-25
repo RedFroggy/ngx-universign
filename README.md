@@ -13,6 +13,18 @@ The component loads an universign javascript file that creates an iframe in whic
 ## Getting started
 
  - Import  `UniversignModule` to your Angular application
+ 
+ ```javascript
+ import { UniversignModule } from 'ngx-universign';
+
+ @NgModule({
+   imports: [
+     UniversignModule
+   ]
+ })
+ export class AppModule {}
+ ```
+ 
  - Add `<ngx-universign-iframe>` in your template
  - The UniversignComponent requires a signerId identifier that can be retrieved once the document to sign is uploaded to universign.
  
