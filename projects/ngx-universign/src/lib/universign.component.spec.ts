@@ -3,7 +3,7 @@ import { UniversignComponent } from './universign.component';
 import {
   RedirectionMode,
   UNIVERSIGN_DEFAULT_IFRAME_ID,
-  UNIVERSIGN_EVENT, UNIVERSIGN_TEST_SCRIPT_URL,
+  UNIVERSIGN_EVENT, UNIVERSIGN_TEST_BASE_URL,
   UNIVERSIGN_TYPE_BEGIN,
   UniversignEvent
 } from './model/universign.typings';
@@ -44,7 +44,7 @@ describe('RdfUniversignComponent', () => {
         expect(universign.signerId).toBeUndefined();
         expect(universign.el).toBe(UNIVERSIGN_DEFAULT_IFRAME_ID);
         expect(universign.redirectionMode).toBe(RedirectionMode.IN);
-        expect(universign.scriptUrl).toBe(UNIVERSIGN_TEST_SCRIPT_URL);
+        expect(universign.scriptUrl).toBe(UNIVERSIGN_TEST_BASE_URL);
     });
 
     it('any universign events should be propagated to the parent component', () => {

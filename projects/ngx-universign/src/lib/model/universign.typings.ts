@@ -1,8 +1,9 @@
 export const UNIVERSIGN_EVENT = 'pdsEvent';
 export const UNIVERSIGN_TYPE_END = 'end';
 export const UNIVERSIGN_TYPE_BEGIN = 'begin';
-export const UNIVERSIGN_TEST_SCRIPT_URL = 'https://sign.test.universign.eu/sig/embed.js';
-export const UNIVERSIGN_PROD_SCRIPT_URL = 'https://app.universign.com/sig/embed.js';
+export const UNIVERSIGN_TEST_BASE_URL = 'https://sign.test.universign.eu';
+export const UNIVERSIGN_PROD_BASE_URL = 'https://app.universign.com';
+export const UNIVERSIGN_SCRIPT_PATH = '/sig/embed.js';
 export const UNIVERSIGN_DEFAULT_IFRAME_ID = 'iframeContainer';
 
 export enum RedirectionMode {
@@ -32,7 +33,7 @@ export interface UniversignConfig {
  */
 declare global {
   interface Window {
-    universignSigInit(el: string, signerId: string, configuration: { redirectionMode: string });
+    universignSigInit(el: string, signerId: string, configuration: { redirectionMode: string }, targetUrl?: string);
   }
 }
 

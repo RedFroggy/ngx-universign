@@ -1,13 +1,13 @@
-import { AfterViewInit, Component, EventEmitter, Input, OnChanges, OnDestroy, OnInit, Output, SimpleChanges } from '@angular/core';
+import { Component, EventEmitter, Input, OnChanges, OnDestroy, OnInit, Output, SimpleChanges } from '@angular/core';
 import { UniversignConfigService } from './universign.config';
 import {
   UNIVERSIGN_DEFAULT_IFRAME_ID,
-  UNIVERSIGN_PROD_SCRIPT_URL,
-  UNIVERSIGN_TEST_SCRIPT_URL, UniversignConfig,
+  UNIVERSIGN_PROD_BASE_URL,
+  UNIVERSIGN_TEST_BASE_URL,
+  UniversignConfig,
   UniversignEvent
 } from './model/universign.typings';
 import { Universign } from './model/universign.model';
-import { UniversignBuilder } from './model/universign.builder';
 
 /**
  * Universign iframe component
@@ -41,7 +41,7 @@ export class UniversignComponent implements OnInit, OnDestroy, OnChanges {
     this.universign = Universign.builder()
       .withEl(this.config.id)
       .withRedirectionMode(this.config.redirectionMode)
-      .withScriptUrl(this.universignConfig.prodMode ? UNIVERSIGN_PROD_SCRIPT_URL : UNIVERSIGN_TEST_SCRIPT_URL)
+      .withScriptUrl(this.universignConfig.prodMode ? UNIVERSIGN_PROD_BASE_URL : UNIVERSIGN_TEST_BASE_URL)
       .withSignerId(this.signerId)
       // Bound universign events to outputs
       .onEnd(this.end)
