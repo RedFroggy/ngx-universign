@@ -92,8 +92,6 @@ export class Universign {
    */
   private universignListener(event: UniversignEvent) {
 
-    window.removeEventListener(UNIVERSIGN_EVENT, this.listener, false);
-
     if (event.type === UNIVERSIGN_EVENT) {
       if (event.detail.eventType === UNIVERSIGN_TYPE_END) {
         this.$endEvent.next(event);
