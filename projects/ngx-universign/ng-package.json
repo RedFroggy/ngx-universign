@@ -3,5 +3,6 @@
   "dest": "../../dist/ngx-universign",
   "lib": {
     "entryFile": "src/public-api.ts"
-  }
+  },
+  "whitelistedNonPeerDependencies": ["loadjs"]
 }
