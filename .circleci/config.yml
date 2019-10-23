@@ -5,7 +5,7 @@ job_defaults: &job_defaults
     - image: circleci/node:12-browsers
   working_directory: ~/ngx-universign
 
-cache_key: &cache_key ngx-universign-deps-cache-{{ .Branch }}-{{ checksum "package.json" }}
+cache_key: &cache_key ngx-universign-deps-cache-{{ .Branch }}-{{ checksum "package-lock.json" }}
 dist_key: &dist_key ngx-universign-dist-{{ .Revision }}
 
 jobs:
@@ -43,6 +43,7 @@ jobs:
           key: *cache_key
       - restore_cache:
           key: *dist_key
+      - run: npm config set '//registry.npmjs.org/:_authToken' "${NPM_TOKEN}"
       - run: npm run semantic-release
 
 workflows:
