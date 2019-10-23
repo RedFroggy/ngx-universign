@@ -43,6 +43,7 @@ jobs:
           key: *cache_key
       - restore_cache:
           key: *dist_key
+      - run: npm config set '//registry.npmjs.org/:_authToken' "${NPM_TOKEN}"
       - run: npm run semantic-release
 
 workflows:
