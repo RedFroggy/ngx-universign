@@ -52,7 +52,7 @@
     "karma-jasmine": "2.0.1",
     "karma-jasmine-html-reporter": "1.4.2",
     "ng-mocks": "8.1.0",
-    "ng-packagr": "4.7.1",
+    "ng-packagr": "5.7.1",
     "protractor": "5.4.2",
     "semantic-release": "15.13.28",
     "ts-node": "7.0.1",
