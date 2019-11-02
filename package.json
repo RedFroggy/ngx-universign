@@ -54,7 +54,7 @@
     "ng-mocks": "8.1.0",
     "ng-packagr": "5.7.1",
     "protractor": "5.4.2",
-    "semantic-release": "15.13.28",
+    "semantic-release": "15.13.29",
     "ts-node": "7.0.1",
     "tsickle": "0.37.0",
     "tslib": "1.10.0",
