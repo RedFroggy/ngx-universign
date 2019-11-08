@@ -40,7 +40,7 @@
     "@semantic-release/git": "7.0.18",
     "@types/jasmine": "3.4.6",
     "@types/jasminewd2": "2.0.8",
-    "@types/node": "8.10.58",
+    "@types/node": "8.10.59",
     "codecov": "3.6.1",
     "codelyzer": "5.2.0",
     "husky": "3.0.9",
