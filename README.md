@@ -26,7 +26,7 @@ The component loads an universign javascript file that creates an iframe in whic
  ```
  
  - Add `<ngx-universign-iframe [signerId]="signerId">` in your template. It will load the document to sign in the iframe.
- - The `signerId` identifier can be retrieved once the document to sign is uploaded to universign.
+ - The `signerId` identifier si provided by universign once the document is uploaded.
  
 ## Environments:
 There is two universign environments (sign.test.universign.eu and app.universign.com) and a different javascript file for each one:
