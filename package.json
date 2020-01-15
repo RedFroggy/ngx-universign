@@ -33,7 +33,7 @@
     "@angular/cli": "~8.1.1",
     "@angular/compiler-cli": "~8.1.1",
     "@angular/language-service": "~8.1.1",
-    "@commitlint/cli": "8.3.4",
+    "@commitlint/cli": "8.3.5",
     "@commitlint/config-conventional": "8.3.4",
     "@netbasal/spectator": "3.12.0",
     "@semantic-release/changelog": "3.0.6",
