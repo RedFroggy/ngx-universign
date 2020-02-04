@@ -38,7 +38,7 @@
     "@netbasal/spectator": "3.12.0",
     "@semantic-release/changelog": "3.0.6",
     "@semantic-release/git": "8.0.0",
-    "@types/jasmine": "3.5.2",
+    "@types/jasmine": "3.5.3",
     "@types/jasminewd2": "2.0.8",
     "@types/node": "8.10.59",
     "codecov": "3.6.4",
