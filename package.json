@@ -22,7 +22,7 @@
     "@angular/core": "~8.1.1",
     "@angular/platform-browser": "~8.1.1",
     "@angular/platform-browser-dynamic": "~8.1.1",
-    "rxjs": "6.5.5",
+    "rxjs": "6.6.0",
     "tslib": "1.13.0",
     "zone.js": "0.10.3",
     "loadjs": "4.2.0"
