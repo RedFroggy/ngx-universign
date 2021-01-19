@@ -13,7 +13,7 @@ import {UniversignConfigService} from './universign.config';
   exports: [UniversignComponent]
 })
 export class UniversignModule {
-  static forRoot(moduleConfig: UniversignConfigService): ModuleWithProviders {
+  static forRoot(moduleConfig: UniversignConfigService): ModuleWithProviders<UniversignModule> {
     return {
       ngModule: UniversignModule,
       providers: [{provide: UniversignConfigService, useValue: moduleConfig}]
