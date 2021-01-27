@@ -28,8 +28,8 @@ jobs:
           key: *cache_key
       - run: npm run lint
       - run: npm run test
-      - run: npm run build
       - run: npm run codecov
+      - run: npm run build
       - save_cache:
           key: *dist_key
           paths:
